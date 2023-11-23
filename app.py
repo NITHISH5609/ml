@@ -61,8 +61,8 @@ if uploaded_image is not None:
             sequence = pad_sequences(sequence, maxlen=max_caption_length)
             yhat = model.predict([image_features, sequence], verbose=0)
             predicted_indices = np.argmax(yhat, axis=2)
-            captions = [captions[i] + " " + get_word_from_index(predicted_indices[i][-1], tokenizer) for i in range(batch_size)]
-            if all(predicted_word is None or predicted_word == "endseq" for predicted_word in predicted_words):
+            captions = [captions[i] + " " + tokenizer.index_word[predicted_indices[i][-1]] for i in range(batch_size)]
+            if all(predicted_word is None or predicted_word == "endseq" for predicted_word in captions):
                 break
 
         # Extract the final generated caption for each image
