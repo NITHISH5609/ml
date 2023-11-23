@@ -77,51 +77,9 @@ if uploaded_image is not None:
         generated_caption = generated_caption.replace("startseq", "").replace("endseq", "")
 
     # Display the generated caption with custom styling
-    # Display the generated caption with custom styling and color
-    # Display the generated caption with custom styling and color
     st.markdown(
-    f'<div style="background-color: #f4f4f4; border-left: 6px solid #3498db; padding: 10px; margin-top: 20px; border-radius: 5px;">'
-    f'<p style="font-style: italic; color: #333;">“{generated_caption}”</p>'
-    f'</div>',
-    unsafe_allow_html=True
-)
-import streamlit as st
-from chatterbot import ChatBot
-from chatterbot.trainers import ChatterBotCorpusTrainer
-
-# Set custom web page title
-st.set_page_config(page_title="Caption Generator & Chatbot App", page_icon="🤖📷")
-
-# Initialize the chatbot
-chatbot = ChatBot("MyBot")
-trainer = ChatterBotCorpusTrainer(chatbot)
-
-# Use the English language corpus data
-trainer.train("chatterbot.corpus.english")
-
-# Streamlit app
-st.title("Image Caption Generator & Chatbot")
-
-# Image Caption Generator Section
-st.markdown(
-    "Upload an image, and this app will generate a caption for it using a trained LSTM model."
-)
-
-uploaded_image = st.file_uploader("Choose an image", type=["jpg", "jpeg", "png"])
-
-# Process uploaded image (your existing code)
-
-# Chatbot Section
-st.sidebar.title("Chatbot")
-
-user_input = st.sidebar.text_input("You:", "")
-if user_input:
-    # Get a response from the chatbot
-    bot_response = chatbot.get_response(user_input)
-    st.sidebar.text("Bot:", bot_response)
-
-# Display the app
-st.sidebar.text("")  # Add some space to separate chatbot and image caption sections
-st.sidebar.text("")  # Add some space to separate chatbot and image caption sections
-
-
+        f'<div style="border-left: 6px solid #ccc; padding: 5px 20px; margin-top: 20px;">'
+        f'<p style="font-style: italic;">“{generated_caption}”</p>'
+        f'</div>',
+        unsafe_allow_html=True
+    )
