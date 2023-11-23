@@ -78,9 +78,11 @@ if uploaded_image is not None:
 
     # Display the generated caption with custom styling
     # Display the generated caption with custom styling and color
+# Display the generated caption with custom styling and color
 st.markdown(
     f'<div style="background-color: #f4f4f4; border-left: 6px solid #3498db; padding: 10px; margin-top: 20px; border-radius: 5px;">'
     f'<p style="font-style: italic; color: #333;">“{generated_caption}”</p>'
     f'</div>',
     unsafe_allow_html=True
 )
+
