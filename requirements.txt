@@ -64,7 +64,7 @@ rsa==4.9
 scipy==1.11.2
 six==1.16.0
 smmap==5.0.0
-streamlit==1.26.0
+streamlit>=0.90.0
 tenacity==8.2.3
 tensorboard==2.12.3
 tensorboard-data-server==0.7.1
@@ -85,5 +85,5 @@ watchdog==3.0.0
 Werkzeug==2.3.7
 wrapt==1.14.1
 zipp==3.16.2
-chatterbot==1.0.5
-chatterbot_corpus==1.2.0
+chatterbot>=1.0.5
+chatterbot_corpus>=1.2.0
